@@ -26,6 +26,8 @@ class tickData:
     def plotTickLine(self):
         fig, ax = plt.subplots()
         fig.subplots_adjust(bottom=0.2)
+        fig.set_figheight(7)
+        fig.set_figwidth(15)
         ax.xaxis.set_major_formatter(dates.DateFormatter('%H:%M:%S'))
         plt.xticks(rotation=45)
         plt.plot(self.data.time.map(self.stringToFloatDate), self.data.price)

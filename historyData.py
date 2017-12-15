@@ -26,6 +26,8 @@ class historyData:
     def plotCandleStick(self):
         fig, ax = plt.subplots()
         fig.subplots_adjust(bottom=0.2)
+        fig.set_figheight(7)
+        fig.set_figwidth(15)
         ax.xaxis.set_major_formatter(dates.DateFormatter('%Y-%m-%d'))
         plt.xticks(rotation=45)
         candlestick_ohlc(ax,self.ohlc,width =0.4,colorup='#77d879',colordown='#db3f3f')
@@ -34,6 +36,8 @@ class historyData:
     def plotCloseLine(self):
         fig, ax = plt.subplots()
         fig.subplots_adjust(bottom=0.2)
+        fig.set_figheight(7)
+        fig.set_figwidth(15)
         ax.xaxis.set_major_formatter(dates.DateFormatter('%Y-%m-%d'))
         plt.xticks(rotation=45)
         plt.plot(self.data.index.map(self.stringToFloatDate), self.data.close)
